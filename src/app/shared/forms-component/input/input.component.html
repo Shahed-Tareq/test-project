@@ -1,0 +1,22 @@
+<div class="form-group relative">
+  <label class="text-[#2B3674] text-sm font-semibold">{{ label }}</label>
+  <input
+    [type]="type"
+    [placeholder]="placeholder"
+    [formControl]="control"
+    class="border px-3 py-3 rounded-2xl w-full mt-2 focus:outline-none focus:shadow-outline placeholder-placeholderBorder text-sm border-[#E0E5F2] bg-transparent"
+    [ngClass]="{
+      'border-[#EF4444]':
+        control.invalid && (control.touched || control.dirty || isSubmitted)
+    }"
+  />
+
+  <div class="error-message">
+    @if (control.invalid && ((control.dirty || control.touched) || isSubmitted
+    )) {
+    <p class="text-[#EF4444] text-xs mt-2">
+      {{ control | errorMessage }}
+    </p>
+    }
+  </div>
+</div>

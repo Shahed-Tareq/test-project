@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    .error-message {
+        @apply h-6 leading-6 overflow-hidden transition-opacity duration-300 text-left;
+      }
+    
+      .error-message span {
+        @apply opacity-100;
+      }
+    
+      .error-message span.ng-hide {
+        @apply opacity-0;
+      }
+}
